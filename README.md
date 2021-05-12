@@ -1,23 +1,17 @@
-# yii2-micro-api
-yii2 micro for rest api
-Using Yii as a Micro-framework
-Yii can be easily used without the features included in basic and advanced templates. 
-In other words, Yii is already a micro-framework. It is not required to have the directory structure provided by templates to work with Yii.<br>
+# Restaurant build with react js and yii2 microframework
 
-download then run composer update<br>
+currently i've just setup the repo and sencronise the backend with frontend ,my application is currently
+running on the port 3000 and my apis are running on port 80.
 
-yii2-micro-api does not create database for you, you have to create yourself<br>
+I m aiming for the realzation of a restaurant website with multiple functionality :
 
-this template already include register user and login
+## Management of user,client,foods,categories,food ordering.
+## Mangement of the warehouse of the restaurant with simple Bi for some report.
+## Authentification and notifcation system  on the upcoming senarios ordering a plat ,creation of update of a food or a cateogy.
+## Notification when the warehouse is empty for a specific ingrediant .
+## Authorisation for getting money as ticket which will provide you with an authorisation to buy some ingrediant for the restaurant
 
-http://localhost/yii2-micro-api/site/login - login - post <br>
-http://localhost/yii2-micro-api/site/register - register - post
+![screencapture-localhost-3000-2021-05-12-20_08_23](https://user-images.githubusercontent.com/47975444/118055579-4af9c200-b380-11eb-93fc-a995ee1a0fda.png)
 
-this template also include debug toolbar and gii 
-
-you can acces gii using http://localhost/yii2-micro-api/gii <br>
-you can acces debug using http://localhost/yii2-micro-api/debug
-
-![alt text](./toolbar.png)
 
 
