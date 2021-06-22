@@ -17,18 +17,17 @@ class ContactCest
 
     public function contactFormCanBeSubmitted(AcceptanceTester $I)
     {
+       
         $I->amGoingTo('submit contact form with correct data');
-        $I->fillField('#contactform-name', 'tester');
-        $I->fillField('#contactform-email', 'tester@example.com');
-        $I->fillField('#contactform-subject', 'test subject');
-        $I->fillField('#contactform-body', 'test content');
-        $I->fillField('#contactform-verifycode', 'testme');
+        $I->fillField('ContactForm[name][0][user_id]', 1);
+        $I->fillField('ContactForm[name][0][priority]', 3);
 
         $I->click('contact-button');
         
         $I->wait(2); // wait for button to be clicked
 
-        $I->dontSeeElement('#contact-form');
-        $I->see('Thank you for contacting us. We will respond to you as soon as possible.');
+        $I->see('contact Form Submitted');
+        $I->wait(3); // wait for 3 secs
+       // $I->see('Thank you for contacting us. We will respond to you as soon as possible.');
     }
 }

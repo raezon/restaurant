@@ -15,6 +15,9 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'T_HLt4hbMvOals_Ko1vGOI34xGfdK2AK',
+            'parsers' => [
+                'application/json' => \yii\web\JsonParser::class
+            ]
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -22,6 +25,7 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
+            'enableSession'=>false
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -43,15 +47,25 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
+        
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                [
+                  'class'=>\yii\rest\UrlRule::class,
+                 //'pluralize'=>false,
+                  'controller'=>['api/food','api/category']
+                ]
             ],
         ],
-        */
+        
     ],
+    'modules'=>[
+        'api'=>[
+            'class'=>\app\modules\api\Module::class
+        ]
+        ],
     'params' => $params,
 ];
 
